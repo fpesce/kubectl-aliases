@@ -30,7 +30,9 @@ def main():
     # (alias, full, allow_when_oneof, incompatible_with)
     cmds = [('k', 'kubectl', None, None)]
 
-    globs = [('sys', '--namespace=kube-system', None, ['sys'])]
+    globs = [
+            ('sys', '--namespace=kube-system', None, ['sys','ist']),
+            ('ist', '--namespace=istio-system', None, ['ist','sys'])]
 
     ops = [
         ('a', 'apply --recursive -f', None, None),
